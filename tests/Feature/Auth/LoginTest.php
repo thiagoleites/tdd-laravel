@@ -32,3 +32,20 @@ it('does not allow login with invalid password', function () {
     $this->assertGuest();
 
 });
+
+it('does not allow inactive users to login', function () {
+
+    $user = User::factory()->inactive()->create([
+        'password' => Hash::make('password123'),
+        'is_active' => false,
+    ]);
+
+    $response = $this->from('/login')->post('/login', [
+        'email' => $user->email,
+        'password' => 'password123',
+    ]);
+
+    $response->assertRedirect('/');
+    $this->assertAuthenticatedAs($user);
+
+});
