@@ -1,38 +1,39 @@
-# 📰 News Portal — Laravel + TDD
+# 📰 Laravel News Portal (TDD)
 
 ![Laravel](https://img.shields.io/badge/Laravel-13-red)
 ![PHP](https://img.shields.io/badge/PHP-8.3+-blue)
-![Tests](https://img.shields.io/badge/Tests-Pest-green)
-![Database](https://img.shields.io/badge/Database-SQLite-lightgrey)
-![Status](https://img.shields.io/badge/Status-In%20Development-yellow)
+![Pest](https://img.shields.io/badge/Tests-Pest-green)
+![SQLite](https://img.shields.io/badge/Database-SQLite-lightgrey)
+![TDD](https://img.shields.io/badge/Development-TDD-purple)
+![Status](https://img.shields.io/badge/Status-In%20Progress-yellow)
 
-Portal de notícias desenvolvido com **Laravel 13** utilizando **TDD (Test-Driven Development)**.
+Portal de notícias desenvolvido com **Laravel 13** utilizando **Test-Driven Development (TDD)**.
 
-Este projeto tem como objetivo demonstrar a construção de um sistema completo seguindo o ciclo clássico de TDD:
+O projeto é construído seguindo o ciclo clássico:
 
 **Red → Green → Refactor**
 
-Cada funcionalidade é criada **a partir de testes automatizados**, garantindo maior qualidade de código, segurança e facilidade de manutenção.
+Cada funcionalidade nasce a partir de **testes automatizados**, garantindo maior qualidade de código, previsibilidade e segurança.
 
 ---
 
-# 🌐 Demo
+# 🌐 Aplicação
 
-A aplicação pode ser acessada em:
+Acesse o projeto em:
 
 **https://laravel.testeprovisorio.com.br**
 
 ---
 
-# 🎯 Objetivo do projeto
+# 🎯 Objetivo
 
-Este projeto foi criado para:
+Este projeto foi criado com foco educacional para demonstrar:
 
-* praticar **TDD com Laravel**
-* demonstrar **boas práticas de arquitetura**
-* construir um **portal de notícias completo**
-* utilizar **testes automatizados com Pest**
-* evoluir o sistema de forma incremental
+* desenvolvimento **orientado a testes**
+* construção incremental de software
+* boas práticas em **Laravel**
+* arquitetura limpa e organizada
+* uso de **factories e database testing**
 
 ---
 
@@ -40,15 +41,15 @@ Este projeto foi criado para:
 
 * Test Driven Development (TDD)
 * Clean Code
-* Domain driven structure
-* Feature testing
-* Database testing
-* Factory states
-* Role based authorization
+* Feature Testing
+* Database Testing
+* Factory States
+* Role Based Authorization
+* Domain Driven Thinking
 
 ---
 
-# ⚙️ Stack utilizada
+# ⚙️ Stack
 
 | Tecnologia   | Descrição           |
 | ------------ | ------------------- |
@@ -60,31 +61,37 @@ Este projeto foi criado para:
 
 ---
 
-# 🧪 Testes
+# 🧪 Estratégia de Testes
 
-Os testes são executados utilizando **Pest** e banco **SQLite em memória**, garantindo rapidez e isolamento.
+O projeto utiliza **SQLite em memória** para executar testes rapidamente.
 
 ```bash
 php artisan test
 ```
 
-Estratégia aplicada:
+Fluxo de desenvolvimento:
 
 ```
-RED → escrever teste
-GREEN → implementar mínimo necessário
-REFACTOR → melhorar código
+1. RED
+escrever teste que falha
+
+2. GREEN
+implementar o mínimo para passar
+
+3. REFACTOR
+melhorar código sem quebrar testes
 ```
 
 ---
 
-# 📦 Estrutura do projeto
+# 🏗 Arquitetura do Projeto
 
 ```
 app
  ├ Models
  ├ Http
  │   ├ Controllers
+ │   ├ Requests
  │   └ Middleware
  ├ Policies
  └ Services
@@ -101,42 +108,53 @@ tests
 
 ---
 
-# 🧱 Funcionalidades
+# 🧱 Módulos do sistema
 
-## Autenticação
-
-* Login
-* Logout
-* Proteção de rotas
-* Controle de usuários ativos/inativos
-
-## Usuários
+## 👤 Usuários
 
 * criação de usuários
 * roles (admin, author)
+* controle de status ativo/inativo
 * factories para testes
 
-## Categorias
+---
+
+## 🔐 Autenticação
+
+* login
+* logout
+* proteção de rotas
+* middleware de autenticação
+
+---
+
+## 🗂 Categorias
 
 * CRUD completo
 * slug único
 * categorias ativas/inativas
 
-## Posts / Notícias
+---
+
+## 📰 Posts
 
 * criação de posts
 * suporte para blog e notícias
-* status de publicação
-* autoria
+* publicação programada
+* autoria por usuário
 
-## Portal público
+---
+
+## 🌍 Portal público
 
 * listagem de notícias
 * página individual por slug
 * filtro por categoria
 * paginação
 
-## Painel administrativo
+---
+
+## ⚙️ Painel administrativo
 
 * gerenciamento de posts
 * gerenciamento de categorias
@@ -144,9 +162,9 @@ tests
 
 ---
 
-# 🗂 Estrutura do banco
+# 🗄 Estrutura do banco
 
-## users
+### users
 
 ```
 id
@@ -158,7 +176,7 @@ is_active
 timestamps
 ```
 
-## categories
+### categories
 
 ```
 id
@@ -169,7 +187,7 @@ is_active
 timestamps
 ```
 
-## posts
+### posts
 
 ```
 id
@@ -188,19 +206,19 @@ timestamps
 
 ---
 
-# 📊 Progresso do projeto
+# 📊 Progresso do Projeto
 
-| Módulo             | Progresso |
-| ------------------ | --------- |
-| Infraestrutura TDD | 100%      |
-| Usuários           | 100%      |
-| Autenticação       | 0%        |
-| Categorias         | 0%        |
-| Posts              | 0%        |
-| Portal público     | 0%        |
-| Painel admin       | 0%        |
-| Autorização        | 0%        |
-| Busca e filtros    | 0%        |
+| Módulo             | Progresso       |
+| ------------------ | --------------- |
+| Infraestrutura TDD | ██████████ 100% |
+| Usuários           | ██████████ 100% |
+| Autenticação       | █░░░░░░░░░ 10%  |
+| Categorias         | ░░░░░░░░░░ 0%   |
+| Posts              | ░░░░░░░░░░ 0%   |
+| Portal público     | ░░░░░░░░░░ 0%   |
+| Painel admin       | ░░░░░░░░░░ 0%   |
+| Autorização        | ░░░░░░░░░░ 0%   |
+| Busca              | ░░░░░░░░░░ 0%   |
 
 ---
 
@@ -209,7 +227,7 @@ timestamps
 ### Fase 1
 
 * Users
-* Auth
+* Authentication
 * Categories
 
 ### Fase 2
@@ -233,14 +251,51 @@ timestamps
 
 ---
 
-# 📚 Aprendizado
+# 🧑‍💻 Desenvolvimento
 
-Este projeto demonstra na prática:
+Clonar o projeto
 
-* como aplicar **TDD em Laravel**
-* como estruturar **testes de feature**
-* como usar **factories e states**
-* como evoluir um sistema de forma incremental
+```bash
+git clone https://github.com/seu-repositorio/news-portal
+```
+
+Entrar no diretório
+
+```bash
+cd news-portal
+```
+
+Instalar dependências
+
+```bash
+composer install
+```
+
+Rodar migrations
+
+```bash
+php artisan migrate
+```
+
+Executar aplicação
+
+```bash
+php artisan serve
+```
+
+---
+
+# 🧪 Rodar testes
+
+```bash
+php artisan test
+```
+
+ou
+
+```bash
+./vendor/bin/pest
+```
 
 ---
 
@@ -253,4 +308,4 @@ FullStack Developer
 
 # 📜 Licença
 
-Projeto criado para fins educacionais.
+Projeto criado para fins educacionais para estudo de **Laravel + TDD**.
