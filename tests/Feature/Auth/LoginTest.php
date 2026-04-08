@@ -45,7 +45,16 @@ it('does not allow inactive users to login', function () {
         'password' => 'password123',
     ]);
 
-    $response->assertRedirect('/');
-    $this->assertAuthenticatedAs($user);
+    $response->assertRedirect('/login');
+    $this->assertGuest();
 
+});
+
+it('allows an authenticated user to logout', function () {
+    $user = User::factory()->create();
+
+    $response = $this->actingAs($user)->post('/logout');
+
+    $response->assertRedirect('/');
+    $this->assertGuest();
 });
