@@ -58,3 +58,11 @@ it('allows an authenticated user to logout', function () {
     $response->assertRedirect('/');
     $this->assertGuest();
 });
+
+
+it('redirects guests trying to access protected pages', function () {
+
+    $response = $this->get('/dashboard');
+
+    $response->assertRedirect('/login');
+});
