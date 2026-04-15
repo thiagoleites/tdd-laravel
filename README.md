@@ -209,11 +209,11 @@ timestamps
 # 📊 Progresso do Projeto
 
 | Módulo             | Progresso       |
-| ------------------ | --------------- |
+| ------------------ |-----------------|
 | Infraestrutura TDD | ██████████ 100% |
 | Usuários           | ██████████ 100% |
-| Autenticação       | █░░░░░░░░░ 10%  |
-| Categorias         | ░░░░░░░░░░ 0%   |
+| Autenticação       | ██████████ 100% |
+| Categorias         | █░░░░░░░░░ 10%  |
 | Posts              | ░░░░░░░░░░ 0%   |
 | Portal público     | ░░░░░░░░░░ 0%   |
 | Painel admin       | ░░░░░░░░░░ 0%   |
